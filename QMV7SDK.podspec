@@ -18,8 +18,10 @@ Pod::Spec.new do |spec|
 
   spec.source       = { :git => "https://github.com/7moor-tech/QMV7SDK.git", :tag => spec.version }
 
-  spec.resource      = "QMV7SDK/QMV7SDK.bundle"
-  spec.vendored_frameworks  = "QMV7SDK/QMV7SDK.framework"
+  spec.source_files  = "Classes/QMV7SDK.framework/Headers/*.{h}"
+
+  spec.resource      = "Classes/QMV7SDK.bundle"
+  spec.vendored_frameworks  = "Classes/QMV7SDK.framework"
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
