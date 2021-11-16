@@ -4,7 +4,7 @@ Pod::Spec.new do |spec|
 
 
   spec.name         = "QMV7SDK"
-  spec.version      = "1.3.0"
+  spec.version      = "1.0"
   spec.summary      = "QMV7SDK_iOS."
 
   spec.homepage     = "https://github.com/7moor-tech/QMV7SDK"
@@ -20,7 +20,6 @@ Pod::Spec.new do |spec|
 
   spec.source_files  = "Classes/QMV7SDK.framework/Headers/*.{h}"
 
-  spec.resource      = "Classes/QMV7SDK.bundle"
   spec.vendored_frameworks  = "Classes/QMV7SDK.framework"
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

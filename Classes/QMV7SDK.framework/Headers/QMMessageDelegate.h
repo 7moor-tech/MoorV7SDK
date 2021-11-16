@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)registerSuccess;
 
-- (void)registerFailure:(NSDictionary *)reason;
+- (void)registerFailure:(QMErrorCode *)reason;
 
 @end
 
@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol QMServiceDelegate <NSObject>
 
 @optional
-- (void)newMessage:(NSString *)chatId messageId:(NSString *)messageId;
+- (void)newMessage:(NSString *)formType;
 
 @optional
 - (void)updateOneMessage:(QMMessageModel *)message withMessageIds:(NSArray *)messageIds;

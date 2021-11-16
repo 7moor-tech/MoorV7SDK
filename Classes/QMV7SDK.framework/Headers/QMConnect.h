@@ -35,13 +35,10 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)sendFile:(NSString *)filePath fileName:(NSString *)fileName fileSize:(NSString *)fileSize progressHander:(void(^)(float,NSString*))progressHander;
 
 + (void)sendCsrInviteMessage:(NSString *)text;
-+ (void)sendRemindMessage:(NSString *)text;
 
 + (void)sendOrderCard:(NSDictionary *)orderCard;
 
 + (void)sendListCard:(NSArray *)listCard;
-
-+ (void)reSendMessage:(QMMessageModel *)message;
 
 //+ (NSArray<QMMessageModel *> *)getAccessidAllDataFormDatabase:(int)number;
 
@@ -49,9 +46,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSArray<QMMessageModel *> *)getAllDataFormDatabase:(int)number;
 // 向前取
 + (NSArray<QMMessageModel *> *)getDataFormDatabase:(int)number withCreatTime:(NSString *)creatTime;
-// 
-+ (QMMessageModel *)getDataFormDatabasewithMessageId:(NSString *)messageId;
-
 // 取大于当前时间
 + (NSArray<QMMessageModel *> *)getNewDataFormDatabaseWithCreatTime:(NSString *)creatTime;
 
@@ -59,13 +53,13 @@ NS_ASSUME_NONNULL_BEGIN
 // 更改点赞消息能不能点击
 + (BOOL)sdkUpdateFingerMessageCannotSelected:(BOOL)cannotSelected;
 + (BOOL)sdkUpdateInviteStatus:(NSString *)invite withMessage:(NSString *)messageId;
-+ (BOOL)sdkDeleteListCards;
++ (void)sdkDeleteListCards;
 
 #pragma mark - 聊天Emoji表情
 + (void)sdkGetEmojiRUL:(void (^)(NSDictionary *data))completion failure:(void (^)(NSDictionary *error))failure;
 
 + (void)sdkNewChat:(void (^)(NSDictionary *data))completion failure:(void (^)(NSDictionary *error))failure;
-+ (void)sdkNewSession:(void (^)(NSDictionary *))completion failure:(void (^)(NSDictionary *))failure;
+
 + (void)sdkSatisfaction:(void (^)(NSDictionary *data))completion failure:(void (^)(NSDictionary *reason))failure;
 
 + (void)sdkCheckCSRStatus:(NSString *)messageId sessionId:(NSString *)sessionId completion:(void (^)(NSDictionary *data))completion failure:(void (^)(NSDictionary *reason))failure;
@@ -131,12 +125,6 @@ NS_ASSUME_NONNULL_BEGIN
  3.图标url地址
  */
 + (void)sdkGetThemeConfig:(NSDictionary *)param completion:(void (^)(id dict))completion failure:(void (^)(NSError *))failure;
-/**
- 取消排队
- 参数 sessionId 
- */
-+ (void)sdkCancelQueue:(NSString *)sessionId completion:(void (^)(id dict))completion failure:(void (^)(NSError *))failure;
-
 
 /**
  用于触发链接状态的代理
