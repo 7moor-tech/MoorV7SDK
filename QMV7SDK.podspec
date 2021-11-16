@@ -18,7 +18,7 @@ Pod::Spec.new do |spec|
 
   spec.source       = { :git => "https://github.com/7moor-tech/QMV7SDK.git", :tag => spec.version }
 
-  #spec.source_files  = "QMV7SDK.framework/Headers/*.h"
+  spec.source_files  = "QMV7SDK.framework/Headers/*.h"
 
   spec.vendored_frameworks  = "QMV7SDK.framework"
 
@@ -26,6 +26,7 @@ Pod::Spec.new do |spec|
 
   spec.requires_arc = true
 
+  spec.xcconfig = { 'HEADER_SEARCH_PATHS' => '${PODS_ROOT}/QMV7SDK/QMV7SDK.framework/Headers/'}
   spec.dependency 'Qiniu', '~> 8.2.1'
   spec.dependency 'FMDB', '~> 2.7.5'
   spec.dependency 'SocketRocket', '~> 0.5.1'
