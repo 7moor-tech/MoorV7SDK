@@ -15,18 +15,24 @@ NS_ASSUME_NONNULL_BEGIN
 typedef enum: NSInteger {
     QMKStatusRobot = 0, // 机器人
     
-    QMKStatusOnline = 1, // 坐席在线
+    QMKStatusOnline, // 坐席在线
     
-    QMKStatusOffline = 2, // 坐席离线
+    QMKStatusOffline, // 坐席离线
     
-    QMKStatusClaim = 3, // 会话被领取
+    QMKStatusClaim, // 会话被领取
     
-    QMKStatusFinish = 4, // 会话被结束
+    QMKStatusFinish, // 会话被结束
     
-    QMKStatusManualButton = 5, //转人工按钮
+    QMKStatusManualButton, //转人工按钮
     
-    QMKStatusQueueNum = 6, //排队数
-}QMKStatus;
+    QMKStatusQueueNum, //排队数
+    
+    QMKStatusLeave, //留言节点
+    
+    QMKStatusInit, //初始化状态（无任何状态）
+
+
+} QMKStatus;
 
 /**
  socket链接状态
@@ -37,7 +43,7 @@ typedef enum: NSInteger {
     QMSocketConnectStatusConnecting     = 0,     //连接中
     
     QMSocketConnectStatusConnected      = 1,     //已连接
-}QMSocketConnectStatus;
+} QMSocketConnectStatus;
 
 /**
  客服操作项
@@ -86,6 +92,11 @@ typedef enum : NSUInteger {
 @property (nonatomic, copy) NSNumber *number;
 
 @property (nonatomic, assign) QMKStatus kStatus;
+
+// 是否显示 取消排队按钮
+@property (nonatomic, assign) BOOL isShowCancelQueue;
+// 排队tips文案
+@property (nonatomic, copy) NSString *queueTips;
 
 @end
 

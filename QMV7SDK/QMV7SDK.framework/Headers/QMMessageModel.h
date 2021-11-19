@@ -6,9 +6,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <JSONModel/JSONModel.h>
-NS_ASSUME_NONNULL_BEGIN
+#import <sys/utsname.h>
 
+NS_ASSUME_NONNULL_BEGIN
 
 typedef enum : NSUInteger {
     QMChatRobotMessageTypeFlowList = 0,
@@ -23,7 +23,16 @@ typedef enum : NSUInteger {
 
 } QMChatRobotMessageType;
 
-@interface QMMessageModel : JSONModel
+
+@interface QMQuickMenu : NSObject
+@property (nonatomic, assign) int button_type;
+@property (nonatomic, copy) NSString *content;
+@property (nonatomic, assign) int enable;
+@property (nonatomic, copy) NSString *icon;
+@property (nonatomic, copy) NSString *name;
+@end
+
+@interface QMMessageModel : NSObject
 
 //@property (nonatomic, strong)QMClientModel *clientModel;
 
@@ -33,6 +42,10 @@ typedef enum : NSUInteger {
 
 @property (nonatomic, copy) NSString *visitorHeadImg;
 
+//注册时的userid
+@property (nonatomic, copy) NSString *registUserId;
+
+//消息体返回的userid
 @property (nonatomic, copy) NSString *userId;
 
 @property (nonatomic, copy) NSString *userName;
@@ -64,7 +77,8 @@ typedef enum : NSUInteger {
 
 // 常见问题
 @property (nonatomic, strong) NSArray *commonQuestionsGroup;
-
+// 常见问题
+@property (nonatomic, copy) NSString *commonQuestionsImg;
 
 // 富文本问题点击事件
 @property (nonatomic, strong) NSArray *flowList;
@@ -99,6 +113,8 @@ typedef enum : NSUInteger {
  */
 @property (nonatomic, copy) NSString *createTime;
 @property (nonatomic, assign) NSTimeInterval createTimestamp;
+// 快速问题
+@property (nonatomic, strong) NSArray *quickMenu;
 // 消息已读未读
 @property (nonatomic, assign) int dealUserMsg;
 // 消息已读
@@ -199,7 +215,14 @@ typedef enum : NSUInteger {
  卡片列表
  */
 @property (nonatomic, copy) NSArray *listCards;
+
+
++ (instancetype)jsonDataToQMMessageModel:(NSDictionary *)dictionary;
+
+
 @end
+
+
 
 
 

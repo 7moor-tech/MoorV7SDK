@@ -28,10 +28,15 @@ typedef void(^QMServerConnectBlock)(QMClient *client);
 + (instancetype)shared;
 
 - (void)initSDK:(void(^)(QMClientModel *server))block;
-
+// 注册sdk 代理回调
 - (void)initSDK:(id<QMRegisterDelegate>)delegate block:(void(^)(QMClientModel *server))block;
+// 注册sdk block回调 目前@{success : value} value 0/1 1成功
+- (void)initSDKWithModel:(void(^)(QMClientModel *server))block completion:(nullable void(^)(NSDictionary *))completion;
+
 
 - (void)disconnectSocket;
+
+- (void)disconnectSocket:(void(^)(BOOL isClose))completion;
 
 @end
 

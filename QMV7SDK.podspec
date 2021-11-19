@@ -4,15 +4,14 @@ Pod::Spec.new do |spec|
 
 
   spec.name         = "QMV7SDK"
-  spec.version      = "1.3.0"
+  spec.version      = "1.3.1"
   spec.summary      = "QMV7SDK_iOS."
 
   spec.homepage     = "https://github.com/7moor-tech/QMV7SDK"
 
-  spec.license      = { :type => "MIT", :file => "LICENSE" }
+  spec.license      = "MIT"
 
   spec.author       = { "RockALins" => "rockcodealin@163.com" }
-
 
   spec.platform     = :ios,'9.0'
 
