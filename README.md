@@ -1,2 +1,2 @@
-# QMV7SDK
-QMV7SDK(iOS)
+# MoorV7SDK
+MoorV7SDK
