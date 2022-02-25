@@ -19,8 +19,8 @@ Pod::Spec.new do |spec|
 
   #spec.source_files  = '**/MoorV7SDK.framework/Headers/*.h'
 
-  spec.resource      = 'MoorV7Bundle.bundle'
-  spec.vendored_frameworks  = "MoorV7SDK.framework"
+  spec.resource      = '**/MoorV7Bundle.bundle'
+  spec.vendored_frameworks  = "**/MoorV7SDK.framework"
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
