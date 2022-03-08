@@ -1,6 +1,6 @@
 # MoorV7SDK
 
-MoorV7SDK是一款在线客服SDK
+MoorV7SDK是容联·七陌 V7平台iOS一款在线客服SDK
 
 # 接入方式
 
