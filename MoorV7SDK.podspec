@@ -4,7 +4,7 @@ Pod::Spec.new do |spec|
 
 
   spec.name         = "MoorV7SDK"
-  spec.version      = "1.5.0"
+  spec.version      = "1.6.0"
   spec.summary      = "MoorV7SDK_iOS."
 
   spec.homepage     = "https://github.com/7moor-tech/MoorV7SDK"
@@ -27,7 +27,7 @@ Pod::Spec.new do |spec|
   spec.requires_arc = true
 
   spec.xcconfig = { 'HEADER_SEARCH_PATHS' => '${PODS_ROOT}/MoorV7SDK/MoorV7SDK.framework/Headers/'}
-  spec.dependency 'Qiniu', '~> 8.2.1'
+  spec.dependency 'Qiniu', '~> 8.4.4'
   spec.dependency 'FMDB', '~> 2.7.5'
   spec.dependency 'SocketRocket', '~> 0.5.1'
   spec.dependency 'YYModel', '~> 1.0.4'
