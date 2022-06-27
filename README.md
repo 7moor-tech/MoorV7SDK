@@ -6,4 +6,4 @@ MoorV7SDK是容联·七陌 V7平台iOS一款在线客服SDK
 
 cocoapods 管理
 
-pod 'MoorV7SDK', '~> 1.6.0'
+pod 'MoorV7SDK', '~> 1.6.1'
