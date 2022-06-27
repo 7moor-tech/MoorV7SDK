@@ -4,7 +4,7 @@ Pod::Spec.new do |spec|
 
 
   spec.name         = "MoorV7SDK"
-  spec.version      = "1.6.1"
+  spec.version      = "1.6.2"
   spec.summary      = "MoorV7SDK_iOS."
 
   spec.homepage     = "https://github.com/7moor-tech/MoorV7SDK"
